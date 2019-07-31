@@ -8,7 +8,7 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-model_file_url = 'https://drive.google.com/uc?export=download&id=1rnshUmsMO6K9vzjGUnwk93iBb49stp-t'
+model_file_url = 'https://drive.google.com/uc?export=download&id=1oREve6flEUDtwgR4LrE5k2NiwD9UnWZM'
 model_file_name = 'model'
 classes = ['greenland-shark', 'hammerhead-shark', 'blue-shark', 'blacktip-reef-shark', 'shortfin-mako-shark', 'whitetip-reef-shark', 'silky-shark', 'lemon-shark', 'bull-shark', 'nurse-shark', 'whale-shark', 'basking-shark', 'oceanic-whitetip-shark', 'cleaned', 'caribbean-reef-shark', 'tiger-shark', 'great-white-shark']
 path = Path(__file__).parent
@@ -28,7 +28,7 @@ async def setup_learner():
     await download_file(model_file_url, path/'models'/f'{model_file_name}.pth')
     data_bunch = ImageDataBunch.single_from_classes(path, classes,
         ds_tfms=get_transforms(), size=224).normalize(imagenet_stats)
-    learn = cnn_learner(data_bunch, models.resnet152, pretrained=False)
+    learn = cnn_learner(data_bunch, models.resnet50, pretrained=False)
     learn.load(model_file_name)
     return learn
 
