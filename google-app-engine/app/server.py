@@ -8,7 +8,7 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-model_file_url = 'https://drive.google.com/uc?export=download&confirm=TySO&id=1rnshUmsMO6K9vzjGUnwk93iBb49stp-t'
+model_file_url = 'https://www.dropbox.com/s/u2tguqkguj39pkf/model-b152.pth?raw=1'
 model_file_name = 'model'
 classes = ['greenland-shark', 'hammerhead-shark', 'blue-shark', 'blacktip-reef-shark', 'shortfin-mako-shark', 'whitetip-reef-shark', 'silky-shark', 'lemon-shark', 'bull-shark', 'nurse-shark', 'whale-shark', 'basking-shark', 'oceanic-whitetip-shark', 'cleaned', 'caribbean-reef-shark', 'tiger-shark', 'great-white-shark']
 path = Path(__file__).parent
